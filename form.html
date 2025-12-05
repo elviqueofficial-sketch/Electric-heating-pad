@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID_HERE');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Order - Elvique™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffd9ef 0%, #ffe8f5 50%, #fff0f8 100%);
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(255, 110, 199, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6ec7, #ff9ed8);
+            padding: 20px 25px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 13px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .order-summary {
+            background: linear-gradient(135deg, #fff0f8, #ffe8f5);
+            border-left: 4px solid #ff6ec7;
+            border-radius: 12px;
+            padding: 15px 18px;
+            margin-bottom: 25px;
+        }
+
+        .order-summary-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ff3d8f;
+            margin-bottom: 10px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+
+        .order-item span {
+            color: #666;
+        }
+
+        .order-item strong {
+            color: #ff3d8f;
+            font-weight: 600;
+        }
+
+        .cod-note {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 18px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .required {
+            color: #ff3d8f;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ffd9ef;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #ff6ec7;
+            background: #fff0f8;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff3d8f, #ff6ec7);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(255, 61, 143, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(255, 61, 143, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #ff3d8f;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #ff6ec7;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+        .loading-content {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .checkmark {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .loading-content h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .loading-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 18px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Your Order</h1>
+            <p class="subtitle">Fill the details below</p>
+        </div>
+
+        <div class="content">
+            <div class="order-summary">
+                <div class="order-summary-title">Your Order:</div>
+                <div class="order-item">
+                    <span>Color:</span>
+                    <strong id="displayColor">-</strong>
+                </div>
+                <div class="order-item">
+                    <span>Variant:</span>
+                    <strong id="displayVariant">-</strong>
+                </div>
+                <div class="order-item">
+                    <span>Price:</span>
+                    <strong id="displayPrice">-</strong>
+                </div>
+            </div>
+
+            <div class="cod-note">
+                Cash on Delivery Available
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <form id="orderForm">
+                <!-- Web3Forms Access Key - GET YOUR OWN KEY FROM https://web3forms.com -->
+                <input type="hidden" name="access_key" value="4daca27b-3477-4027-8c2b-68eff245253d">
+                
+                <!-- Custom subject line -->
+                <input type="hidden" name="subject" value="New COD Order - Elvique™">
+                
+                <!-- Redirect after submission -->
+                <input type="hidden" name="redirect" value="https://yourdomain.com/page3.html">
+                
+                <!-- Order details -->
+                <input type="hidden" id="selectedColor" name="Selected Color" value="">
+                <input type="hidden" id="selectedVariant" name="Selected Variant" value="">
+                <input type="hidden" id="selectedPrice" name="Price" value="">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobile" name="phone" required placeholder="10-digit number" pattern="[0-9]{10}" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Complete Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" required placeholder="House No., Street, Area, City, State"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode">Pincode (Optional)</label>
+                    <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" maxlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark (Optional)</label>
+                    <input type="text" id="landmark" name="landmark" placeholder="Nearby landmark">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Place Order
+                </button>
+            </form>
+
+            <a href="index.html" class="back-link"> Back to Product</a>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="checkmark"></div>
+            <h3>Order Placed!</h3>
+            <p>Redirecting...</p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        const color = urlParams.get('color') || 'Not selected';
+        const variant = urlParams.get('variant') || 'Not selected';
+        const price = urlParams.get('price') || 'Not specified';
+        
+        // Fill hidden fields
+        document.getElementById('selectedColor').value = color;
+        document.getElementById('selectedVariant').value = variant;
+        document.getElementById('selectedPrice').value = price;
+        
+        // Display in summary
+        document.getElementById('displayColor').textContent = color;
+        document.getElementById('displayVariant').textContent = variant;
+        document.getElementById('displayPrice').innerHTML = price !== 'Not specified' ? '&#8377;' + price : price;
+        
+        // Validate mobile
+        document.getElementById('mobile').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        // Validate pincode
+        document.getElementById('pincode').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+        
+        // Handle form submission with Web3Forms
+        const form = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Track form submission
+            fbq('track', 'Lead');
+            
+            // Show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            errorMessage.style.display = 'none';
+            
+            try {
+                const formData = new FormData(form);
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    loadingOverlay.classList.add('show');
+                    
+                    setTimeout(function() {
+                        window.location.href = 'page3.html';
+                    }, 2000);
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (error) {
+                errorMessage.textContent = 'Failed to submit order. Please try again.';
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Place Order';
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    
+    <script>
+        fbq('track', 'AddToCart');
+    </script>
+    
+</body>
+</html>
