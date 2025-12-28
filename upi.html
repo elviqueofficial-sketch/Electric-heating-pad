@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID_HERE');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - Elvique™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffd9ef 0%, #ffe8f5 50%, #fff0f8 100%);
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(255, 110, 199, 0.25);
+            overflow: hidden;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6ec7, #ff9ed8);
+            padding: 40px 25px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .secure-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px 25px 35px;
+        }
+
+        /* Price Display - Big and Bold */
+        .price-box {
+            background: linear-gradient(135deg, #fff5fb, #ffe8f5);
+            border: 3px solid #ff6ec7;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 110, 199, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .price-amount {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ff3d8f;
+            letter-spacing: -2px;
+            line-height: 1;
+            position: relative;
+        }
+
+        .order-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 15px 18px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .order-info-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .order-info-label {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .order-info-value {
+            font-size: 13px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .divider {
+            width: 1px;
+            height: 30px;
+            background: #ddd;
+        }
+
+        /* UPI Apps Grid - Prominent */
+        .payment-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .upi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .upi-btn {
+            background: white;
+            border: 3px solid #ffd9ef;
+            padding: 25px 15px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .upi-btn:active {
+            transform: scale(0.95);
+        }
+
+        .upi-btn:hover {
+            border-color: #ff6ec7;
+            background: linear-gradient(135deg, #fff5fb, #ffe8f5);
+            box-shadow: 0 8px 20px rgba(255, 110, 199, 0.2);
+        }
+
+        .upi-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .gpay-icon { background: linear-gradient(135deg, #4285f4, #34a853); color: white; }
+        .phonepe-icon { background: linear-gradient(135deg, #5f259f, #8247b5); color: white; }
+        .paytm-icon { background: linear-gradient(135deg, #00baf2, #00a8e8); color: white; }
+        .bhim-icon { background: linear-gradient(135deg, #ff6b35, #ff8c42); color: white; }
+
+        .upi-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Other UPI Apps Button */
+        .other-upi-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff3d8f, #ff6ec7);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 61, 143, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .other-upi-btn:active {
+            transform: scale(0.98);
+        }
+
+        .other-upi-btn:hover {
+            box-shadow: 0 12px 30px rgba(255, 61, 143, 0.45);
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .trust-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .support-link {
+            color: #ff3d8f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* Loading State */
+        .processing {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .processing.show {
+            display: flex;
+        }
+
+        .processing-content {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #ffd9ef;
+            border-top-color: #ff3d8f;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .processing-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .processing-subtext {
+            font-size: 13px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 20px;
+            }
+
+            .content {
+                padding: 25px 20px 30px;
+            }
+
+            .price-amount {
+                font-size: 50px;
+            }
+
+            .upi-grid {
+                gap: 12px;
+            }
+
+            .upi-btn {
+                padding: 20px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="secure-badge">
+                🔒 Secure Payment
+            </div>
+            <h1>Quick Checkout</h1>
+            <p class="subtitle">Choose your UPI app to pay</p>
+        </div>
+
+        <div class="content">
+            <!-- PRICE DISPLAY -->
+            <div class="price-box">
+                <div class="price-label">Total Amount</div>
+                <div class="price-amount" id="priceDisplay">₹899</div>
+            </div>
+
+            <!-- ORDER INFO -->
+            <div class="order-info">
+                <div class="order-info-item">
+                    <div class="order-info-label">Order ID</div>
+                    <div class="order-info-value" id="orderIdDisplay">-</div>
+                </div>
+                <div class="divider"></div>
+                <div class="order-info-item">
+                    <div class="order-info-label">Product</div>
+                    <div class="order-info-value" id="productDisplay">-</div>
+                </div>
+            </div>
+
+            <!-- PAYMENT BUTTONS -->
+            <div class="payment-title">Select Payment App</div>
+            
+            <div class="upi-grid">
+                <!-- Google Pay -->
+                <button class="upi-btn" onclick="payWithApp('gpay')">
+                    <div class="upi-icon gpay-icon">G</div>
+                    <div class="upi-name">Google Pay</div>
+                </button>
+
+                <!-- PhonePe -->
+                <button class="upi-btn" onclick="payWithApp('phonepe')">
+                    <div class="upi-icon phonepe-icon">P</div>
+                    <div class="upi-name">PhonePe</div>
+                </button>
+
+                <!-- Paytm -->
+                <button class="upi-btn" onclick="payWithApp('paytm')">
+                    <div class="upi-icon paytm-icon">₹</div>
+                    <div class="upi-name">Paytm</div>
+                </button>
+
+                <!-- BHIM UPI -->
+                <button class="upi-btn" onclick="payWithApp('bhim')">
+                    <div class="upi-icon bhim-icon">B</div>
+                    <div class="upi-name">BHIM UPI</div>
+                </button>
+            </div>
+
+            <!-- Other UPI Apps -->
+            <button class="other-upi-btn" onclick="payWithUPI()">
+                Pay with Other UPI Apps
+            </button>
+
+            <!-- TRUST BADGES -->
+            <div class="trust-section">
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">100% Secure</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-icon">🔒</div>
+                        <div class="trust-text">Encrypted</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-icon">⚡</div>
+                        <div class="trust-text">Instant</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <p class="footer-text">Safe and secure payment powered by UPI</p>
+                <a href="mailto:support@elvique.com" class="support-link">Need Help?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Processing Overlay -->
+    <div class="processing" id="processingOverlay">
+        <div class="processing-content">
+            <div class="spinner"></div>
+            <div class="processing-text">Opening Payment App...</div>
+            <div class="processing-subtext">Please wait</div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // CONFIGURATION - CHANGE YOUR UPI ID HERE
+        // ========================================
+        const UPI_CONFIG = {
+            upiId: 'yourname@paytm',              // ⚠️ REPLACE WITH YOUR UPI ID
+            businessName: 'Elvique',
+            merchantCode: '',                      // Optional: Your merchant code
+        };
+
+        // Get data from URL (passed from checkout form)
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderAmount = urlParams.get('price') || '899';
+        const orderColor = urlParams.get('color') || '';
+        const orderVariant = urlParams.get('variant') || '';
+
+        // Generate Order ID
+        const orderId = 'ELV' + Date.now();
+
+        // Update Display
+        document.getElementById('priceDisplay').textContent = '₹' + orderAmount;
+        document.getElementById('orderIdDisplay').textContent = orderId.slice(-8);
+        
+        if (orderColor && orderVariant) {
+            document.getElementById('productDisplay').textContent = orderColor.slice(0, 10);
+        } else {
+            document.getElementById('productDisplay').textContent = 'Elvique™';
+        }
+
+        // ========================================
+        // UPI PAYMENT FUNCTIONS
+        // ========================================
+
+        function buildUPILink() {
+            let upiUrl = 'upi://pay?';
+            upiUrl += `pa=${encodeURIComponent(UPI_CONFIG.upiId)}`;
+            upiUrl += `&pn=${encodeURIComponent(UPI_CONFIG.businessName)}`;
+            upiUrl += `&am=${orderAmount}`;
+            upiUrl += `&cu=INR`;
+            upiUrl += `&tn=${encodeURIComponent('Order ' + orderId)}`;
+            
+            if (UPI_CONFIG.merchantCode) {
+                upiUrl += `&mc=${UPI_CONFIG.merchantCode}`;
+            }
+            
+            return upiUrl;
+        }
+
+        function showProcessing() {
+            document.getElementById('processingOverlay').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('processingOverlay').classList.remove('show');
+            }, 2000);
+        }
+
+        function payWithApp(appName) {
+            showProcessing();
+            
+            // Track purchase
+            fbq('track', 'InitiateCheckout', {
+                value: orderAmount,
+                currency: 'INR',
+                content_name: appName
+            });
+
+            const baseUPI = buildUPILink();
+            let appUrl = baseUPI;
+
+            // App-specific deep links
+            const appLinks = {
+                'gpay': 'tez://upi/pay?' + baseUPI.replace('upi://pay?', ''),
+                'phonepe': 'phonepe://pay?' + baseUPI.replace('upi://pay?', ''),
+                'paytm': 'paytmmp://pay?' + baseUPI.replace('upi://pay?', ''),
+                'bhim': 'bhim://pay?' + baseUPI.replace('upi://pay?', '')
+            };
+
+            // Try app-specific link
+            if (appLinks[appName]) {
+                window.location.href = appLinks[appName];
+                
+                // Fallback to generic UPI
+                setTimeout(() => {
+                    window.location.href = baseUPI;
+                }, 1500);
+            } else {
+                window.location.href = baseUPI;
+            }
+        }
+
+        function payWithUPI() {
+            showProcessing();
+            
+            // Track event
+            fbq('track', 'InitiateCheckout', {
+                value: orderAmount,
+                currency: 'INR'
+            });
+
+            // Open generic UPI link
+            window.location.href = buildUPILink();
+        }
+
+        // Track page view
+        fbq('track', 'ViewContent', {
+            value: orderAmount,
+            currency: 'INR'
+        });
+    </script>
+</body>
+</html>
