@@ -839,12 +839,14 @@ src="https://www.facebook.com/tr?id=130728639115&ev=PageView&noscript=1"/>
 
 // NEW: Confirmation functions
 function confirmPayment() {
-    // User confirmed they paid
-    fbq('track', 'Purchase', {
+    // ✅ Track InitiateCheckout instead of Purchase
+    fbq('track', 'InitiateCheckout', {
         value: orderAmount,
         currency: 'INR'
     });
     
+    window.location.href = `order-confirmed.html?order=${orderId}&amount=${orderAmount}&product=Elvique™`;
+}
     window.location.href = `order-confirmed.html?order=${orderId}&amount=${orderAmount}&product=Elvique™`;
 }
 
